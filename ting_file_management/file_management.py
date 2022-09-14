@@ -1,2 +1,33 @@
+import csv
+import sys
+
+
 def txt_importer(path_file):
-    """Aqui irá sua implementação"""
+    try:
+        is_txt = path_file.endswith('.txt')
+
+        if not is_txt:
+            return print("Formato inválido", file=sys.stderr)
+
+        else:
+            file_lines_list = []
+
+            with open(path_file) as file:
+                read_file = csv.reader(file, delimiter="\n")
+
+                for line in read_file:
+                    file_lines_list.append(line[0])
+
+                return file_lines_list
+
+    except FileNotFoundError:
+        return print(f"Arquivo {path_file} não encontrado", file=sys.stderr)
+
+
+# text_file = [
+#     "Acima de tudo,",
+#     "é fundamental ressaltar que a adoção de "
+#     "políticas descentralizadoras nos obriga",
+#     "à análise do levantamento das variáveis envolvidas.",
+# ]
+# print(txt_importer("statics/arquivo_nao_existe.txt"))
