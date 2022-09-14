@@ -22,12 +22,3 @@ def txt_importer(path_file):
 
     except FileNotFoundError:
         return print(f"Arquivo {path_file} não encontrado", file=sys.stderr)
-
-
-# text_file = [
-#     "Acima de tudo,",
-#     "é fundamental ressaltar que a adoção de "
-#     "políticas descentralizadoras nos obriga",
-#     "à análise do levantamento das variáveis envolvidas.",
-# ]
-# print(txt_importer("statics/arquivo_nao_existe.txt"))
