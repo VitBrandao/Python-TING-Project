@@ -28,9 +28,9 @@ def remove(instance):
         return print("Não há elementos")
 
     dequeue_file = instance.dequeue()
-    # print(dequeue_file)
+
     file_name = dequeue_file["nome_do_arquivo"]
-    # print(file_name)
+
     return print(f"Arquivo {file_name} removido com sucesso")
 
 
