@@ -35,4 +35,16 @@ def remove(instance):
 
 
 def file_metadata(instance, position):
-    """Aqui irá sua implementação"""
+    try:
+        instance_item_to_str = str(instance.search(position))
+
+        return sys.stdout.write(instance_item_to_str)
+    except IndexError:
+        return sys.stderr.write("Posição inválida")
+
+
+"""
+5.1 - Será validado que ao executar a função file_metadata com sucesso deverá exibir a mensagem correta via stdout e;
+
+5.2 - Será validado que ao executar a função file_metadata com posição inválida deverá exibir a mensagem correta via stderr
+"""
